@@ -13,22 +13,26 @@ Note that all the tests are not executed on this environment due to limitations 
 
 ````csharp
 public class SamossasSaysHelloWorld
-{
-    private string dbName = "Adventure Works DW 2012";
-    private string connString = @"Provider=MSOLAP.4;Data Source=(local)\SQL2014;Initial Catalog='Adventure Works DW 2012'";
-        
-    public void ProcessTwoDimensions()
+{    
+    private static string dbName = "Adventure Works DW 2012";
+    private static string connString = @"Provider=MSOLAP.4;Data Source=(local)\SQL2014;Initial Catalog='Adventure Works DW 2012'";
+
+    static void Main(string[] args)
     {
         var dimensions = new[] { "Customer", "Date" };
 
         var monitor = new TraceMonitor();
         monitor.BeginProcess += delegate (object sender, BeginProcessEventArgs e)
         {
-            Console.WriteLine("Start:" + e.Object.Name);
+            Console.WriteLine("Start process of '" + e.Object.Name + "' at " + e.Timing.ToString("hh:mm:ss.ffff"));
         };
+        
         monitor.EndProcess += delegate(object sender, EndProcessEventArgs e)
         {
-            Console.WriteLine("End:" + e.Object.Name);
+            Console.WriteLine("{0} process of '{1}' at {2}"
+                , e.Success ? "Successful" : "Failed"
+                , e.Object.Name
+                , e.Timing.ToString("hh:mm:ss.ffff"));
         };
 
         var processor = new Processor(new[] { monitor });
