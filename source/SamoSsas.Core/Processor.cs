@@ -18,7 +18,7 @@ namespace SamoSsas
         protected Server server = null;
         private readonly IEnumerable<IMonitor> monitors;
 
-        private IList<string> errors ;
+        private List<string> errors ;
         public IEnumerable<string> Errors 
         {
             get
@@ -61,7 +61,8 @@ namespace SamoSsas
             var booleanResult = analyzer.Analyze(processResult);
             Debug.WriteLineIf(booleanResult, "All process requests have been successfully executed.");
             Debug.WriteLineIf(!booleanResult, "At least one error has occured during the processing requests.");
-            var errors = analyzer.Errors;
+            errors = new List<string>();
+            errors.AddRange(analyzer.Errors);
 
             return booleanResult;
         }
