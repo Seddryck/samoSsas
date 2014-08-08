@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AnalysisServices;
 
-namespace SamoSsas.Core.Processing.ResultAnalyzer
+namespace SamoSsas.Processing.ResultAnalyzer
 {
     public class BasicResultAnalyzer
     {

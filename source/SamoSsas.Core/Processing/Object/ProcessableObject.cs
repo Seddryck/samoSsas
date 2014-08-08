@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SamoSsas.Core.Processing.Object
+namespace SamoSsas.Processing.Object
 {
     public abstract class ProcessableObject
     {

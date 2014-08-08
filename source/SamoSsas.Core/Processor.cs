@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AnalysisServices;
-using SamoSsas.Core.Processing.Monitor;
-using SamoSsas.Core.Processing.Object;
-using SamoSsas.Core.Processing.ResultAnalyzer;
+using SamoSsas.Processing.Monitor;
+using SamoSsas.Processing.Object;
+using SamoSsas.Processing.ResultAnalyzer;
 using System.Diagnostics;
 
-namespace SamoSsas.Core
+namespace SamoSsas
 {
     public class Processor
     {

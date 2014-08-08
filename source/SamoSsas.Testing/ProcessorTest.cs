@@ -1,9 +1,9 @@
 ﻿using Microsoft.AnalysisServices;
 using NUnit.Framework;
-using SamoSsas.Core;
-using SamoSsas.Core.Processing;
-using SamoSsas.Core.Processing.Monitor;
-using SamoSsas.Core.Processing.Object;
+using SamoSsas;
+using SamoSsas.Processing;
+using SamoSsas.Processing.Monitor;
+using SamoSsas.Processing.Object;
 using System;
 using System.Collections.Generic;
 using System.Linq;

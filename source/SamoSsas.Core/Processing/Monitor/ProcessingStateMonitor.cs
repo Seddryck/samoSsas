@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using SamoSsas.Core.Processing.Object;
+using SamoSsas.Processing.Object;
 using System.Diagnostics;
 
-namespace SamoSsas.Core.Processing.Monitor
+namespace SamoSsas.Processing.Monitor
 {
     public class ProcessingStateMonitor : IMonitor
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SamoSsas.Core.Processing.ResultAnalyzer
+namespace SamoSsas.Processing.ResultAnalyzer
 {
     public class ErrorReceivedEventArgs
     {

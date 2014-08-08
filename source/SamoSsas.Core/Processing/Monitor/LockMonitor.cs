@@ -1,5 +1,5 @@
 ﻿using Microsoft.AnalysisServices.AdomdClient;
-using SamoSsas.Core.Processing.Object;
+using SamoSsas.Processing.Object;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Xml;
 
 
-namespace SamoSsas.Core.Processing.Monitor
+namespace SamoSsas.Processing.Monitor
 {
     public class LockMonitor : IMonitor
     {

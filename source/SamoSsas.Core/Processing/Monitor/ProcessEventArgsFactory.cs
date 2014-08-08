@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AnalysisServices;
-using SamoSsas.Core.Processing.Object;
+using SamoSsas.Processing.Object;
 
-namespace SamoSsas.Core.Processing.Monitor
+namespace SamoSsas.Processing.Monitor
 {
     public class ProcessEventArgsFactory
     {
