@@ -12,28 +12,28 @@ Note that all the tests are not executed on this environment due to limitations 
 ## HelloWorld sample ##
 
 ````csharp
-    public class SamossasSaysHelloWorld
-    {
-        private string dbName = "Adventure Works DW 2012";
-        private string connString = @"Provider=MSOLAP.4;Data Source=(local)\SQL2014;Initial Catalog='Adventure Works DW 2012'";
+public class SamossasSaysHelloWorld
+{
+    private string dbName = "Adventure Works DW 2012";
+    private string connString = @"Provider=MSOLAP.4;Data Source=(local)\SQL2014;Initial Catalog='Adventure Works DW 2012'";
         
-        public void ProcessTwoDimensions()
+    public void ProcessTwoDimensions()
+    {
+        var dimensions = new[] { "Customer", "Date" };
+
+        var monitor = new TraceMonitor();
+        monitor.BeginProcess += delegate (object sender, BeginProcessEventArgs e)
         {
-            var dimensions = new[] { "Customer", "Date" };
+            Console.WriteLine("Start:" + e.Object.Name);
+        };
+        monitor.EndProcess += delegate(object sender, EndProcessEventArgs e)
+        {
+            Console.WriteLine("End:" + e.Object.Name);
+        };
 
-            var monitor = new TraceMonitor();
-            monitor.BeginProcess += delegate (object sender, BeginProcessEventArgs e)
-            {
-                Console.WriteLine("Start:" + e.Object.Name);
-            };
-            monitor.EndProcess += delegate(object sender, EndProcessEventArgs e)
-            {
-                Console.WriteLine("End:" + e.Object.Name);
-            };
-
-            var processor = new Processor(new[] { monitor });
-            processor.Connect(connString, dbName);
-            processor.ProcessDimensions(dimensions);
-        }
+        var processor = new Processor(new[] { monitor });
+        processor.Connect(connString, dbName);
+        processor.ProcessDimensions(dimensions);
     }
+}
 ````
