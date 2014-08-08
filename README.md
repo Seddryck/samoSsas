@@ -3,6 +3,8 @@ samoSsas
 
 SamoSsas is an API over the API of the AMO objects. It's specifically designed for an effective way to handle the processing of cubes and monitor it.
 
+![project status](http://stillmaintained.com/Seddryck/samoSsas.png)
+
 ## Continuous Integration ##
 A continuous integration service is available on AppVeyor at https://ci.appveyor.com/project/CdricLCharlier/samossas/ 
 Note that all the tests are not executed on this environment due to limitations in the availability of some components (SSAS).
